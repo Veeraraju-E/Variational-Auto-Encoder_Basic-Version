@@ -9,8 +9,8 @@ from model import VariationalAutoEncoder
 
 # Initial Constants
 DEVICE = torch.device('cpu')
-EPOCHS = 10
-LR = 1e-2  # 3e-4 is the Karpathy Constant
+EPOCHS = 75
+LR = 1e-5  # 3e-4 is the Karpathy Constant
 BATCH_SIZE = 32
 IN_DIM = 28*28
 LATENT_DIM = 200
@@ -55,7 +55,7 @@ def train(loader=train_dataloader, model=model):
 def generate(digit, num_samples):
     # it takes in digit -> the digit to be generated, and also the number of such samples
 
-    # let's first get one image corresponding to each digit, and use this as the base, bu putting it into a list
+    # let's first get one image corresponding to each digit, and use this as the base, by putting it into a list
     idx = 0
     images_base = []
     for (x, y) in dataset:
